@@ -19,8 +19,8 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  
 }
+
 button{
   border-radius: 50%;
   width: 17px;
@@ -28,8 +28,32 @@ button{
   background-color:red;
   opacity: 0.7;
 }
+.back-button{
+  position: absolute;
+  background-color: purple;
+  height: 150px;
+  width: 230px; 
+  left: 90px;
+  top: 100px;
+  border-radius: 5%;
+  z-index: -1;
+  opacity: .7;
+  color: white;
+  z-index:999;
+  text-align: center;
+  font-size: 40px;
+ 
+}
+.back-button:hover{
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: Black;
+}
 
-
+.back-button p{
+  margin-top: 43px;
+}
 
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
