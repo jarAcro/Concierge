@@ -74,7 +74,10 @@ function showSectionImage(sectionId) {
 
         // Write the image and script to the popup window's document
         popupWindow.document.write(`
-            <img src="${sectionImage}" alt="Section Image" style="width:100%; height:100%;">
+            <div style="text-align:center;">
+                <img src="${sectionImage}" alt="Section Image" style="max-width:100%; height:auto;">
+                <p style="font-size:30px; font-weight:bold; color:#333; margin-top:10px;">Click anywhere on the screen to close this window.</p>
+            </div>
             <script>
                 document.addEventListener('click', function() {
                     window.close();
