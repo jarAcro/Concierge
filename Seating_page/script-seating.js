@@ -63,41 +63,25 @@ function showSectionImage(sectionId) {
 "section-200-3": "/images/seating-images/section200-3.png",
 "section-200-4": "/images/seating-images/section200-4.png",
 "section-200-5": "/images/seating-images/section200-5.png",
-
+    
     };
-  // Get the image URL based on the section ID
+  
+
     const sectionImage = sectionImageMap[sectionId];
     if (sectionImage) {
-      const popupWindow = window.open("", "Section Image", "width=2000,height=1000, channelmode=yes fullscreen=yes scrollbars=no");
-      popupWindow.document.write(`<img src="${sectionImage}" alt="Section Image">`);
+        // Open a new popup window
+        const popupWindow = window.open("", "Section Image", "width=2000,height=1000,channelmode=yes,fullscreen=yes,scrollbars=no");
+
+        // Write the image and script to the popup window's document
+        popupWindow.document.write(`
+            <img src="${sectionImage}" alt="Section Image" style="width:100%; height:100%;">
+            <script>
+                document.addEventListener('click', function() {
+                    window.close();
+                });
+            </script>
+        `);
     }
-  }
-
-  /*
-let popupTimer;
-let inactivityTimer;
-
-function resetInactivityTimer() {
-    // Clear the previous timer, if any
-    clearTimeout(inactivityTimer);
-    clearTimeout(popupTimer);
-
-    // Set a new timer for 20 seconds of inactivity
-    inactivityTimer = setTimeout(function() {
-        if (window.confirm("Would you like more time??")) {
-          resetInactivityTimer();
-        } else {
-            window.location.href = "../index.html";
-        }
-    }, 20000); // 20 seconds in milliseconds
 }
 
-// Initialize the timer when the page loads
-resetInactivityTimer();
-
-// Add an event listener to reset the timer on user activity (e.g., mousemove or keypress)
-document.addEventListener("mousemove", resetInactivityTimer);
-document.addEventListener("keypress", resetInactivityTimer);
-
-*/
 
